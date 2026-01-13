@@ -1,0 +1,36 @@
+1. git clone your project repo
+2. cd into repo name
+3. mkdir client && cd client
+4. pnpm create vite@latest .
+5. choose : -> framework : react
+            -> variant : javascript
+6. rm -rf all the following files
+    eslint.config.js src/assets/react.svg src/App.css src/App.jsx src/index.css src/main.jsx 
+7. then create the following files
+ touch eslint.config.js src/assets/react.svg src/App.css src/App.jsx src/index.css src/main.jsx
+8. pnpm install && pnpm up --latest 
+9. pnpm add tailwindcss @tailwindcss/vite
+10. file : src/index.css   "@import 'tailwindcss';"
+11. in file vite.config.js
+    import {defineConfig} from 'vite'
+    import react from '@vitejs/plugin-react'
+    import tailwindcss from '@tailwindcss/vite'
+    export default defineConfig({
+        plugins: [react(),tailwindcss()]
+    })
+9. in file src/main.jsx 
+    import {createRoot} from 'react-dom/client';
+    import './index.css';
+    import App from './App.jsx';
+    createRoot(document.getElementById ('root')).render(<App />);
+10.  in file src/App.jsx
+    import React from 'react'
+    const App = () => {
+        return (
+            <h1 className = "text-3xl font-bold text-center text-gray-800 mt-10">
+            setup is complete!
+            </h1>
+        );
+    };
+    export default App;
+11. pnpm run dev
