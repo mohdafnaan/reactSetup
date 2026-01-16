@@ -1,0 +1,66 @@
+Why React ?
+While everything we do in react can technically be done in plain HTML, CSS and Javascript, React allows :
+. Better code reuse 
+.Large-scale performance in production 
+. Clean sepeeration of concerns via components
+. Easier maintance and testing
+
+Fodler Structure
+src/
+|-- components   #Reusable UI  components
+|-- Pages        # Page-specific components
+|-- Utils        # Constants, helper, and mock data
+
+. src = source fodler. All app logic should reside here.
+. you are free  to structure folder as you like, but the industry typically follows this convention.
+
+.jsx vs .jsx
+
+const  MyComponent = () => {
+    return <h1>hello world</h1>;
+};
+
+export default MyComponent;
+
+pros of .jsx :
+.clarity : indicates the presence iof JSX 
+. better editor support (highlighting,linting)
+. Matches community convention
+
+You can use .js, but:
+.misleading for JSX-containing files
+. May confuse older tooling 
+. less expensive in file  lists
+
+
+best practice :
+use .jsx for components.
+use .js for utilities config, and non-jsx 
+
+you  can import  like this :
+import Header from "./Components/Header.jsx
+import Header from "./Components/Header
+
+
+constants & static data 
+
+Dont keep large static data or hardcoded strings inside components.
+
+instead, extract to utils 
+export const CDN_link = "http://cdnlink.com";
+export const URL = "https://suhail.app";
+
+//usage
+import {CDN_link,URL} from "../utils/constants"
+
+default Export 
+
+//mockdata.js
+export deafult data;
+
+//usage 
+import data from "..utils/mockdata";
+
+
+.Avoid files longer than 100 lines
+. if you exceed that, refactor into smaller components or files;
